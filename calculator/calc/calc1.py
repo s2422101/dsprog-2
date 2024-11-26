@@ -26,6 +26,11 @@ def main(page: ft.Page):
         ft.ElevatedButton(text="0"),
         ft.ElevatedButton(text="."),
         ft.ElevatedButton(text="="),
+        ft.ElevatedButton(text="10^x"),
+        ft.ElevatedButton(text="x²"),
+        ft.ElevatedButton(text="x³"),
+        ft.ElevatedButton(text="x!"),
+        ft.ElevatedButton(text="1/x"),
     )
 
 
