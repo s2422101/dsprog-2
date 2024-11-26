@@ -9,6 +9,7 @@ def main(page: ft.Page):
         ft.Row(controls=[result]),
         ft.Row(
             controls=[
+                ft.ElevatedButton(text="10^x"),
                 ft.ElevatedButton(text="AC"),
                 ft.ElevatedButton(text="+/-"),
                 ft.ElevatedButton(text="%"),
@@ -17,6 +18,7 @@ def main(page: ft.Page):
         ),
         ft.Row(
             controls=[
+                ft.ElevatedButton(text="x²"),
                 ft.ElevatedButton(text="7"),
                 ft.ElevatedButton(text="8"),
                 ft.ElevatedButton(text="9"),
@@ -25,6 +27,7 @@ def main(page: ft.Page):
         ),
         ft.Row(
             controls=[
+                ft.ElevatedButton(text="x³"),
                 ft.ElevatedButton(text="4"),
                 ft.ElevatedButton(text="5"),
                 ft.ElevatedButton(text="6"),
@@ -33,6 +36,7 @@ def main(page: ft.Page):
         ),
         ft.Row(
             controls=[
+                ft.ElevatedButton(text="x!"),
                 ft.ElevatedButton(text="1"),
                 ft.ElevatedButton(text="2"),
                 ft.ElevatedButton(text="3"),
@@ -41,6 +45,7 @@ def main(page: ft.Page):
         ),
         ft.Row(
             controls=[
+                ft.ElevatedButton(text="1/x"),
                 ft.ElevatedButton(text="0"),
                 ft.ElevatedButton(text="."),
                 ft.ElevatedButton(text="="),
