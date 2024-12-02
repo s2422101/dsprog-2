@@ -14,3 +14,6 @@ try:
         data = json.load(file)
 except FileNotFoundError:
     raise FileNotFoundError(f"JSON ファイル '{json_path}' が見つかりません。")
+# 地域データキャッシュ
+area_cache: Dict[str, Dict] = {}
+
