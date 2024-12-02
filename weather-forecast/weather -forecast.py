@@ -196,3 +196,23 @@ def main(page: ft.Page):
                 )
             )
         page.update()
+        # ページにリストと選択情報、天気予報を追加
+    page.add(
+        ft.Row(
+            [
+                ft.Container(
+                    width=300,
+                    content=region_list_view,
+                    bgcolor=ft.colors.SURFACE_VARIANT,
+                ),
+                ft.VerticalDivider(width=1),
+                ft.Column(
+                    [selected_item, forecast_view],
+                    alignment=ft.MainAxisAlignment.START,
+                    expand=True,
+                ),
+            ],
+            expand=True,
+        ),
+        progress_bar,
+    )
