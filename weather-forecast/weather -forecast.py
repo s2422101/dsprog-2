@@ -16,4 +16,36 @@ except FileNotFoundError:
     raise FileNotFoundError(f"JSON ファイル '{json_path}' が見つかりません。")
 # 地域データキャッシュ
 area_cache: Dict[str, Dict] = {}
+def format_date(date_str: str) -> str:
+# 日付を日本語表記に変換
+    date = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+    return date.strftime("%Y年%m月%d日")
+def get_weather_text(code: str) -> str:
+# 天気コードに対応する天気を返す
+    weather_codes = {
+        "100": "晴れ",
+        "101": "晴れ時々曇り",
+        "102": "晴れ時々雨",
+        "200": "曇り",
+        "201": "曇り時々晴れ",
+        "202": "曇り時々雨",
+        "218": "曇り時々雪",
+        "270": "雪時々曇り",
+        "300": "雨",
+        "400": "雪",
+        "500": "雷雨",
+        "413": "雪のち雨",
+        "206": "雨時々曇り",
+        "111": "雨時々晴れ",
+        "112": "雨時々雪",
+        "211": "雪時々晴れ",
+        "206": "雨時々曇り",
+        "212": "雪時々曇り",
+        "313": "雪のち雨",
+        "314": "雨のち雪",
+        "203": "曇り時々雪",
+        "302": "雪",
+        "114": "雪時々晴れ",
+    }
+    return weather_codes.get(code, f"不明な天気 (コード: {code})")
 
