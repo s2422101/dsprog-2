@@ -83,4 +83,8 @@ def main(page: ft.Page):
     # アプリケーションのタイトルやテーマの指定
     page.title = "地域選択と天気予報表示"
     page.theme_mode = "light"
+    # 選択情報を表示するテキスト
+    selected_item = ft.Text("天気予報", size=30)
+    selected_index = None  # 選択されたアイテムのインデックス
+    forecast_view = ft.Column(spacing=10, expand=True)
 
