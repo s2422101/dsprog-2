@@ -79,4 +79,8 @@ def get_weather_icon(code: str) -> str:
     }
     # 聞いたことも無い天気の場合は❓を返す
     return weather_icons.get(code, "❓")
+def main(page: ft.Page):
+    # アプリケーションのタイトルやテーマの指定
+    page.title = "地域選択と天気予報表示"
+    page.theme_mode = "light"
 
