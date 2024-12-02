@@ -159,7 +159,7 @@ def main(page: ft.Page):
         finally:
             progress_bar.visible = False
             page.update()
-            
+
 # 天気予報を表示
     def display_forecast(data: Dict):
         forecast_view.controls.clear()
@@ -180,6 +180,19 @@ def main(page: ft.Page):
                         ),
                         padding=10,
                     )
+                )
+            )
+        page.update()
+        # リストアイテムを作成
+    def update_list():
+        region_list_view.controls.clear()
+        for code, area in data.get("offices", {}).items():
+            region_list_view.controls.append(
+                ft.ListTile(
+                    leading=ft.Icon(ft.icons.LOCATION_ON),
+                    title=ft.Text(area["name"]),
+                    subtitle=ft.Text(f"地域コード: {code}"),
+                    on_click=lambda e, code=code: load_forecast(code),
                 )
             )
         page.update()
