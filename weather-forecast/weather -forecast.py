@@ -216,3 +216,7 @@ def main(page: ft.Page):
         ),
         progress_bar,
     )
+     # 地域リストを読み込む
+    load_region_list()
+
+ft.app(main)
