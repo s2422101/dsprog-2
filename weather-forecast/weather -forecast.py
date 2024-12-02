@@ -93,3 +93,5 @@ def main(page: ft.Page):
         spacing=10,
         padding=10,
     )
+    # プログレスバーの追加
+    progress_bar = ft.ProgressBar(visible=False)
