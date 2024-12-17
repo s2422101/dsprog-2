@@ -72,3 +72,20 @@ def main(page: ft.Page):
     # アプリケーションのページ設定
     page.title = "地域ごとの天気予報"
     page.theme_mode = "light"
+
+    # WeatherDBインスタンスを作成
+    db = WeatherDB()
+    current_region_code = None
+
+    # プログレスバーの初期設定
+    progress_bar = ft.ProgressBar(visible=False)
+
+    # エラーメッセージを表示する関数
+    def show_error(message: str):
+        page.snack_bar = ft.SnackBar(
+            content=ft.Text(message),
+            action="閉じる",
+            bgcolor=ft.colors.ERROR,
+        )
+        page.snack_bar.open = True
+        page.update()
