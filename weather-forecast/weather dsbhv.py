@@ -88,4 +88,23 @@ def main(page: ft.Page):
             bgcolor=ft.colors.ERROR,
         )
         page.snack_bar.open = True
-        page.update()
+        
+        page.update()# 地域一覧を表示するListView
+    region_list_view = ft.ListView(
+        expand=True,
+        spacing=10,
+        padding=10,
+    )
+
+    # 天気予報表示用のビュー
+    forecast_view = ft.Column(
+        expand=True,
+        spacing=10,
+        alignment=ft.MainAxisAlignment.START,
+    )
+
+    # 過去の天気予報を表示するビュー
+    history_view = ft.Column(
+        visible=False,
+        expand=True,
+    )
